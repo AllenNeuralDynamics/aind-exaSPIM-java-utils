@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>37.0.0</version>
+	</parent>
+
+	<groupId>org.aind</groupId>
+	<artifactId>exaspim-java-utils</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>AIND ExaSPIM Utils</name>
+	<description>This package provides automation utilities for the exaSPIM pipeline in java.</description>
+	<url>https://github.com/AllenNeuralDynamics/aind-exaSPIM-java-utils</url>
+	<inceptionYear>2024</inceptionYear>
+	<organization>
+		<name>Allen Institute for Neural Dynamics</name>
+		<url>https://alleninstitute.org/division/neural-dynamics/</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/license/MIT</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>kgabor</id>
+			<name>Gabor Kovacs</name>
+			<roles>
+				<role>founder</role>
+				<role>lead</role>
+				<role>developer</role>
+				<role>debugger</role>
+				<role>reviewer</role>
+				<role>support</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>tpietzsch</id>
+			<name>Tobias Pietzsch</name>
+			<url>https://imagej.net/User:Pietzsch</url>
+			<roles>
+				<role>developer</role>
+				<role>reviewer</role>
+				<role>maintainer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Christian Tischer</name>
+			<properties><id>tischi</id></properties>
+		</contributor>
+	</contributors>
+
+	<mailingLists>
+		<mailingList>
+			<name>Image.sc Forum</name>
+			<archive>https://forum.image.sc/tag/bigdataviewer</archive>
+		</mailingList>
+	</mailingLists>
+
+	<scm>
+		<connection>scm:git:https://github.com/AllenNeuralDynamics/aind-exaSPIM-java-utils</connection>
+		<developerConnection>scm:git:git@github.com:AllenNeuralDynamics/aind-exaSPIM-java-utilsbigdataviewer/bigdataviewer-omezarr</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/AllenNeuralDynamics/aind-exaSPIM-java-utils</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/AllenNeuralDynamics/aind-exaSPIM-java-utils/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>GitHub Actions</system>
+		<url>https://github.com/AllenNeuralDynamics/aind-exaSPIM-java-utils/actions</url>
+	</ciManagement>
+
+	<properties>
+		<package-name>org.aind.exaspim</package-name>
+		<license.licenseName>mit</license.licenseName>
+		<license.copyrightOwners>Allen Institute for Neural Dynamics</license.copyrightOwners>
+
+		<n5.version>3.2.0</n5.version>
+		<n5-aws-s3.version>4.1.2</n5-aws-s3.version>
+		<n5-zarr.version>1.3.1</n5-zarr.version>
+
+		<!-- NB: Deploy releases to the SciJava Maven repository. -->
+		<releaseProfiles>sign,deploy-to-scijava</releaseProfiles>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>scijava.public</id>
+			<url>https://maven.scijava.org/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>bigdataviewer-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>bigdataviewer-vistools</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.imglib2</groupId>
+			<artifactId>imglib2-cache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.imglib2</groupId>
+			<artifactId>imglib2</artifactId>
+		</dependency>
+
+
+		<!-- N5 -->
+		<dependency>
+			<groupId>org.janelia.saalfeldlab</groupId>
+			<artifactId>n5</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.janelia.saalfeldlab</groupId>
+			<artifactId>n5-aws-s3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.janelia.saalfeldlab</groupId>
+			<artifactId>n5-zarr</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.janelia.saalfeldlab</groupId>
+			<artifactId>n5-imglib2</artifactId>
+		</dependency>
+
+
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>1.12.465</version>
+		</dependency>
+
+	</dependencies>
+</project>
